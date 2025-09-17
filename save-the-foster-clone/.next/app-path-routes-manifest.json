@@ -1,8 +1,11 @@
 {
   "/_not-found/page": "/_not-found",
-  "/team/page": "/team",
+  "/robots.txt/route": "/robots.txt",
+  "/sitemap.xml/route": "/sitemap.xml",
   "/about/page": "/about",
   "/contact/page": "/contact",
   "/page": "/",
-  "/upcoming-projects/page": "/upcoming-projects"
+  "/team/page": "/team",
+  "/upcoming-projects/page": "/upcoming-projects",
+  "/api/contact/route": "/api/contact"
 }

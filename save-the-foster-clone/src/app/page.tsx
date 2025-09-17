@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -27,19 +28,25 @@ export default function Home() {
             <div className="relative order-1 md:order-2">
               {/* Photo Collage */}
               <div className="grid grid-cols-2 gap-4">
-                <img
-                  src="https://ext.same-assets.com/314997060/3628837202.jpeg"
+                <Image
+                  src="https://images.unsplash.com/photo-1529651737248-dad5e287768e?q=80&auto=format&fit=crop&w=640&h=320"
                   alt="Children at play"
+                  width={640}
+                  height={320}
                   className="rounded-lg shadow-lg w-full h-40 md:h-48 object-cover"
                 />
-                <img
-                  src="https://ext.same-assets.com/314997060/2173599510.webp"
+                <Image
+                  src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&auto=format&fit=crop&w=640&h=320"
                   alt="Child portrait"
+                  width={640}
+                  height={320}
                   className="rounded-lg shadow-lg w-full h-40 md:h-48 object-cover"
                 />
-                <img
-                  src="https://ext.same-assets.com/314997060/3921842995.jpeg"
+                <Image
+                  src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?q=80&auto=format&fit=crop&w=1200&h=400"
                   alt="Happy children"
+                  width={1200}
+                  height={400}
                   className="rounded-lg shadow-lg w-full h-32 md:h-40 object-cover col-span-2"
                 />
               </div>

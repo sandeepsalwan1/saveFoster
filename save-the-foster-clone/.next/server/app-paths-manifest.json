@@ -1,8 +1,11 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
-  "/team/page": "app/team/page.js",
+  "/robots.txt/route": "app/robots.txt/route.js",
+  "/sitemap.xml/route": "app/sitemap.xml/route.js",
   "/about/page": "app/about/page.js",
   "/contact/page": "app/contact/page.js",
   "/page": "app/page.js",
-  "/upcoming-projects/page": "app/upcoming-projects/page.js"
+  "/team/page": "app/team/page.js",
+  "/upcoming-projects/page": "app/upcoming-projects/page.js",
+  "/api/contact/route": "app/api/contact/route.js"
 }
