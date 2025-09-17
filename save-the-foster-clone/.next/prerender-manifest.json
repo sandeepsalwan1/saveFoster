@@ -25,6 +25,30 @@
         "x-next-revalidate-tag-token"
       ]
     },
+    "/": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "Next-Action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/",
+      "dataRoute": "/index.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
     "/team": {
       "experimentalBypassFor": [
         {
@@ -40,30 +64,6 @@
       "initialRevalidateSeconds": false,
       "srcRoute": "/team",
       "dataRoute": "/team.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/contact": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/contact",
-      "dataRoute": "/contact.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -97,7 +97,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/": {
+    "/contact": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -110,8 +110,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/",
-      "dataRoute": "/index.rsc",
+      "srcRoute": "/contact",
+      "dataRoute": "/contact.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -125,8 +125,8 @@
   "dynamicRoutes": {},
   "notFoundRoutes": [],
   "preview": {
-    "previewModeId": "e9d2687a0420e39fb1bc670e6db03b47",
-    "previewModeSigningKey": "14a5ee163504a6bbc806f3d737e1b119c7de8c3accb2611214fc3b73c4ad3118",
-    "previewModeEncryptionKey": "e402fde5a7be2c8604b52e076ddda1fe211ce38cde161abe097ad8469f564fb7"
+    "previewModeId": "45ec5c86e6f5f0baf5401464e9e08748",
+    "previewModeSigningKey": "25d3fab3f7a478bb3582a93c1cb23703104faa80134464692c56992d7475c91b",
+    "previewModeEncryptionKey": "f2a148903885d7da555e94c23c4e5aac793faa42156e21b43fb065a0407ec263"
   }
 }

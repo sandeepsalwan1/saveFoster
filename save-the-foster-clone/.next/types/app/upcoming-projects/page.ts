@@ -1,4 +1,4 @@
-// File: /Users/sandeep/projects/saveFoster/save-the-foster-clone/src/app/upcoming-projects/page.tsx
+// File: /workspace/save-the-foster-clone/src/app/upcoming-projects/page.tsx
 import * as entry from '../../../../src/app/upcoming-projects/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

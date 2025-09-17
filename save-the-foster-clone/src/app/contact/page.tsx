@@ -16,18 +16,33 @@ export default function Contact() {
     message: ''
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real app, you would send this to a server
-    console.log('Form submitted:', formData);
-    setIsSubmitted(true);
-
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setIsSubmitted(false);
+    setIsSubmitting(true);
+    setErrorMessage(null);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        throw new Error(data?.error || "Failed to send message. Please try again later.");
+      }
+      setIsSubmitted(true);
       setFormData({ name: '', email: '', subject: '', message: '' });
-    }, 3000);
+      // Hide success state after a short delay
+      setTimeout(() => setIsSubmitted(false), 4000);
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : "Unexpected error";
+      setErrorMessage(message);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -84,6 +99,11 @@ export default function Contact() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
+                {errorMessage && (
+                  <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
+                    {errorMessage}
+                  </div>
+                )}
                 <div>
                   <Label htmlFor="name" className="text-gray-700">Name</Label>
                   <Input
@@ -143,9 +163,10 @@ export default function Contact() {
                 <div className="text-center">
                   <Button
                     type="submit"
-                    className="bg-[#2a316b] hover:bg-[#1e2456] text-white px-8 py-3"
+                    disabled={isSubmitting}
+                    className="bg-[#2a316b] hover:bg-[#1e2456] text-white px-8 py-3 disabled:opacity-70"
                   >
-                    Submit
+                    {isSubmitting ? 'Sending…' : 'Submit'}
                   </Button>
                 </div>
               </form>

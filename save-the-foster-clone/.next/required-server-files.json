@@ -123,7 +123,7 @@
         "transform": "lodash/{{member}}"
       }
     },
-    "outputFileTracingRoot": "/Users/sandeep/projects/saveFoster/save-the-foster-clone",
+    "outputFileTracingRoot": "/workspace/save-the-foster-clone",
     "experimental": {
       "useSkewCookie": false,
       "nodeMiddleware": false,
@@ -182,7 +182,7 @@
       "middlewarePrefetch": "flexible",
       "optimisticClientCache": true,
       "manualClientBasePath": false,
-      "cpus": 13,
+      "cpus": 3,
       "memoryBasedWorkersCount": false,
       "imgOptConcurrency": null,
       "imgOptTimeoutInSeconds": 7,
@@ -314,10 +314,10 @@
     "bundlePagesRouterDependencies": false,
     "configFileName": "next.config.js",
     "turbopack": {
-      "root": "/Users/sandeep/projects/saveFoster/save-the-foster-clone"
+      "root": "/workspace/save-the-foster-clone"
     }
   },
-  "appDir": "/Users/sandeep/projects/saveFoster/save-the-foster-clone",
+  "appDir": "/workspace/save-the-foster-clone",
   "relativeAppDir": "",
   "files": [
     ".next/routes-manifest.json",

@@ -3,6 +3,19 @@
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Image from "next/image";
+
+function getThreeMonthsFromTodayLabel(): string {
+  const now = new Date();
+  const target = new Date(now);
+  target.setMonth(now.getMonth() + 3);
+  const dateStr = target.toLocaleDateString("en-US", {
+    month: "short",
+    day: "2-digit",
+    year: "numeric",
+  });
+  return `${dateStr}, 4:20 PM – 8:10 PM PDT`;
+}
 
 export default function UpcomingProjects() {
   return (
@@ -50,7 +63,7 @@ export default function UpcomingProjects() {
               <div className="space-y-4">
                 <div>
                   <p className="font-semibold">When</p>
-                  <p>Jun 05, 2023, 4:20 PM – 8:10 PM PDT</p>
+                  <p>{getThreeMonthsFromTodayLabel()}</p>
                 </div>
                 <div>
                   <p className="font-semibold">Where</p>
@@ -74,10 +87,13 @@ export default function UpcomingProjects() {
               </div>
             </div>
             <div>
-              <img
-                src="https://ext.same-assets.com/314997060/274617797.png"
-                alt="Event volunteers"
-                className="w-full rounded-lg shadow-lg"
+              <Image
+                src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&auto=format&fit=crop&w=1200&h=800"
+                alt="Volunteers preparing surgical supplies for a medical mission"
+                width={1200}
+                height={800}
+                className="w-full rounded-lg shadow-lg object-cover"
+                priority
               />
             </div>
           </div>
