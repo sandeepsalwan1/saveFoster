@@ -25,16 +25,6 @@ const projects = [
     ],
   },
   // ── Add future projects below this line ──
-  // {
-  //   id: "project-id",
-  //   title: "Project Title",
-  //   partner: "Partner Org",
-  //   date: "Year",
-  //   description: "Short description of the project.",
-  //   images: [
-  //     { src: "/images/folder/photo.jpg", alt: "Description" },
-  //   ],
-  // },
 ];
 
 /* ------------------------------------------------------------------ */
@@ -58,14 +48,17 @@ export default function Projects() {
         </div>
       </section>
 
-      {/* ── Project Galleries ── */}
+      {/* ═══════════════════════════════════════════════════════════════ */}
+      {/*  PAST PROJECTS (most recent first)                             */}
+      {/* ═══════════════════════════════════════════════════════════════ */}
+
+      {/* ── 1. Bangladesh / Rotaplast (most recent) ── */}
       {projects.map((project, idx) => (
         <section
           key={project.id}
           className={`py-10 ${idx % 2 === 0 ? "bg-white" : "bg-gray-50"}`}
         >
           <div className="container mx-auto px-4 max-w-6xl">
-            {/* Project header */}
             <div className="text-center mb-6">
               <span className="inline-block bg-[#aeb2d9] text-white text-sm font-semibold px-4 py-1 rounded-full mb-2">
                 {project.partner} &middot; {project.date}
@@ -78,7 +71,6 @@ export default function Projects() {
               </p>
             </div>
 
-            {/* Photo grid – 2x2 */}
             <div className="grid grid-cols-2 gap-3">
               {project.images.map((img, i) => (
                 <div key={i} className="overflow-hidden rounded-xl shadow-md">
@@ -94,7 +86,43 @@ export default function Projects() {
         </section>
       ))}
 
-      {/* ── More Projects Coming Soon placeholder ── */}
+      {/* ── 2. School Supplies Donation (older past event) ── */}
+      <section className="py-10 bg-gray-50">
+        <div className="container mx-auto px-4 text-center">
+          <span className="inline-block bg-[#aeb2d9] text-white text-sm font-semibold px-4 py-1 rounded-full mb-2">
+            Past Event
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold text-[#2f3257] mb-3">
+            Donating School Supplies
+          </h2>
+          <p className="text-gray-600 mb-6 max-w-3xl mx-auto leading-relaxed">
+            School is one of the most important experiences a child goes through. Our next-generation
+            children will be the world&apos;s future leaders, so it is our responsibility to offer proper education.
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <div className="bg-white p-6 rounded-lg text-left shadow-md">
+              <h4 className="text-lg font-bold text-[#2f3257] mb-4">
+                We fundraised to help underprivileged school kids.
+              </h4>
+              <ol className="space-y-3 text-gray-600 list-decimal list-inside text-sm">
+                <li>The money went towards school supplies such as pencils, notebooks, erasers, scissors, glue, etc.</li>
+                <li>These supplies enabled kids to participate in all school projects and homework without lacking basic materials.</li>
+                <li>Donations allowed them to experience an entirely new educational experience.</li>
+              </ol>
+            </div>
+            <div>
+              <img
+                src="/images/9.jpeg"
+                alt="School supplies donation"
+                className="w-full rounded-lg shadow-lg"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── More Projects Coming Soon ── */}
       <section className="py-12 bg-[#aeb2d9]">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
@@ -112,16 +140,21 @@ export default function Projects() {
         </div>
       </section>
 
-      {/* ── Suture Collection Project (existing upcoming event) ── */}
+      {/* ═══════════════════════════════════════════════════════════════ */}
+      {/*  UPCOMING EVENT                                                */}
+      {/* ═══════════════════════════════════════════════════════════════ */}
+
       <section className="py-10 bg-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-[#2f3257] mb-4">Upcoming Event</h2>
-          <h3 className="text-xl font-bold text-[#2f3257] mb-4 underline">
+          <span className="inline-block bg-[#2f3257] text-white text-sm font-semibold px-4 py-1 rounded-full mb-2">
+            Upcoming
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold text-[#2f3257] mb-3">
             Suture Collection Project for Cleft Surgeries
-          </h3>
-          <p className="text-lg text-gray-600 mb-4">You are donating for their smiles.</p>
+          </h2>
+          <p className="text-gray-600 mb-6">You are donating for their smiles.</p>
 
-          <div className="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto mt-6">
+          <div className="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
             <div className="bg-[#2f3257] text-white p-8 rounded-lg text-left">
               <h4 className="text-xl font-bold mb-4">
                 We are fundraising to support essential surgical supplies.
@@ -133,7 +166,7 @@ export default function Projects() {
               </ol>
               <div className="mt-6 space-y-2">
                 <p className="font-semibold">When</p>
-                <p>Jun 05, 2023, 4:20 PM – 8:10 PM PDT</p>
+                <p>Jun 05, 2026, 4:20 PM – 8:10 PM PDT</p>
                 <p className="font-semibold mt-3">Where</p>
                 <p>Fremont, CA, USA</p>
               </div>
@@ -142,41 +175,6 @@ export default function Projects() {
               <img
                 src="/images/8.jpeg"
                 alt="Event volunteers"
-                className="w-full rounded-lg shadow-lg"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Past Event: School Supplies ── */}
-      <section className="py-10 bg-gray-50">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-[#2f3257] mb-4">Past Event</h2>
-          <h3 className="text-xl font-bold text-[#2f3257] mb-4 underline">
-            Donating School Supplies
-          </h3>
-          <p className="text-base text-gray-600 mb-3">You are donating for your future.</p>
-          <p className="text-sm text-gray-600 mb-6 leading-relaxed max-w-3xl mx-auto">
-            School is one of the most important experiences a child goes through. Our next-generation
-            children will be the world&apos;s future leaders, so it is our responsibility to offer proper education.
-          </p>
-
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <div className="bg-white p-6 rounded-lg text-left shadow-md">
-              <h4 className="text-lg font-bold text-[#2f3257] mb-4">
-                We are fundraising to help underprivileged school kids.
-              </h4>
-              <ol className="space-y-3 text-gray-600 list-decimal list-inside text-sm">
-                <li>The money goes towards school supplies such as pencils, notebooks, erasers, scissors, glue, etc.</li>
-                <li>These supplies enable kids to participate in all school projects and homework without lacking basic materials.</li>
-                <li>Your donation allows them to experience an entirely new educational experience.</li>
-              </ol>
-            </div>
-            <div>
-              <img
-                src="/images/9.jpeg"
-                alt="School supplies donation"
                 className="w-full rounded-lg shadow-lg"
               />
             </div>
