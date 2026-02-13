@@ -16,7 +16,7 @@ export default function About() {
           <div
             className="relative h-80 md:h-96 bg-cover bg-center"
             style={{
-              backgroundImage: 'linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("https://ext.same-assets.com/314997060/2032188089.jpeg")'
+              backgroundImage: 'linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("/images/13.jpeg")'
             }}
           >
             <div className="absolute inset-0 flex flex-col justify-center items-center text-white p-8 text-center">
@@ -28,7 +28,7 @@ export default function About() {
           <div
             className="relative h-80 md:h-96 bg-cover bg-center"
             style={{
-              backgroundImage: 'linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("https://ext.same-assets.com/314997060/2832025048.jpeg")'
+              backgroundImage: 'linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("/images/14.jpeg")'
             }}
           >
             <div className="absolute inset-0 flex flex-col justify-center items-center text-white p-8 text-center">
@@ -90,7 +90,7 @@ export default function About() {
             </div>
             <div>
               <img
-                src="https://ext.same-assets.com/314997060/287358955.jpeg"
+                src="/images/15.jpeg"
                 alt="Children playing in water"
                 className="w-full rounded-lg shadow-lg"
               />

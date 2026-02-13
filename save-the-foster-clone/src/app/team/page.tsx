@@ -9,43 +9,43 @@ export default function Team() {
     {
       name: "Dr Harpreet Chachal",
       title: "Project Manager",
-      image: "https://ext.same-assets.com/314997060/1285485762.png",
+      image: "/images/16.jpeg",
       description: "She is very passionate about helping foster youth. During her time served as a practical doctor, she has picked up many practical skills and knowledge."
     },
     {
       name: "Bobbi Ausubel",
       title: "Content Strategist",
-      image: "https://ext.same-assets.com/314997060/130281676.jpeg",
+      image: "/images/17.jpeg",
       description: "Bobby has worked internationally with kids and has helped restore emotional and mental health of many exploited youth."
     },
     {
       name: "Ranjana Saxena",
       title: "Coordinator",
-      image: "https://ext.same-assets.com/314997060/1533384369.png",
+      image: "/images/18.jpeg",
       description: "Dr. Saxena is a well accomplished physician, and in her free time she serves foster kids."
     },
     {
       name: "Sandeep Salwan",
       title: "Tech Lead",
-      image: "https://ext.same-assets.com/314997060/529382035.png",
+      image: "/images/19.jpeg",
       description: "Sandeep is a University student studying Computer Science and wants to use his knowledge for the betterment of society."
     },
     {
       name: "Aryan Mohindra",
       title: "Public Image And Marketing Management",
-      image: "https://ext.same-assets.com/314997060/1958279240.png",
+      image: "/images/20.jpeg",
       description: "Aryan is a Highschool senior who is apart of the California Scholarship Federation, Social Justice Leadership, and National Honors Society."
     },
     {
       name: "Dr Chau Phan",
       title: "Product Manager",
-      image: "https://ext.same-assets.com/314997060/1379906825.png",
+      image: "/images/21.jpeg",
       description: "Dr Phan is a multitalented individual who runs many businesses, but she finds time to serve her community."
     },
     {
       name: "Janice Lacsina",
       title: "Volunteer",
-      image: "https://ext.same-assets.com/314997060/295502431.png",
+      image: "/images/22.jpeg",
       description: "Janice has great experience in contributing to organizations and is a great help towards her local neighborhoods."
     }
   ];
@@ -95,13 +95,13 @@ export default function Team() {
                   </p>
                   <div className="flex space-x-3">
                     <a href="#" className="hover:opacity-75">
-                      <img src="https://ext.same-assets.com/314997060/1331218441.png" alt="Facebook" className="w-5 h-5" />
+                      <svg className="w-5 h-5 text-[#2f3257]" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                     </a>
                     <a href="#" className="hover:opacity-75">
-                      <img src="https://ext.same-assets.com/314997060/2593578048.png" alt="Twitter" className="w-5 h-5" />
+                      <svg className="w-5 h-5 text-[#2f3257]" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
                     </a>
                     <a href="#" className="hover:opacity-75">
-                      <img src="https://ext.same-assets.com/314997060/135932356.png" alt="LinkedIn" className="w-5 h-5" />
+                      <svg className="w-5 h-5 text-[#2f3257]" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                     </a>
                   </div>
                 </div>
@@ -130,7 +130,7 @@ export default function Team() {
       <section
         className="py-16 bg-cover bg-center relative"
         style={{
-          backgroundImage: 'linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("https://ext.same-assets.com/314997060/475665609.jpeg")'
+          backgroundImage: 'linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("/images/23.jpeg")'
         }}
       >
         <div className="container mx-auto px-4 text-center">

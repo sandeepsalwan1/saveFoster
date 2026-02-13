@@ -17,7 +17,7 @@ export default function Header() {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
           <Link href="/" className="text-gray-700 hover:text-[#1e2029] transition-colors">Home</Link>
-          <Link href="/upcoming-projects" className="text-gray-700 hover:text-[#1e2029] transition-colors">Upcoming Projects</Link>
+          <Link href="/upcoming-projects" className="text-gray-700 hover:text-[#1e2029] transition-colors">Projects</Link>
           <Link href="/about" className="text-gray-700 hover:text-[#1e2029] transition-colors">About Us</Link>
           <Link href="/team" className="text-gray-700 hover:text-[#1e2029] transition-colors">Team</Link>
           <Link href="/contact" className="text-gray-700 hover:text-[#1e2029] transition-colors">Contact</Link>
@@ -49,7 +49,7 @@ export default function Header() {
         <div className="md:hidden bg-white border-t">
           <nav className="px-4 py-2 space-y-2">
             <Link href="/" className="block py-2 text-gray-700 hover:text-[#1e2029]">Home</Link>
-            <Link href="/upcoming-projects" className="block py-2 text-gray-700 hover:text-[#1e2029]">Upcoming Projects</Link>
+            <Link href="/upcoming-projects" className="block py-2 text-gray-700 hover:text-[#1e2029]">Projects</Link>
             <Link href="/about" className="block py-2 text-gray-700 hover:text-[#1e2029]">About Us</Link>
             <Link href="/team" className="block py-2 text-gray-700 hover:text-[#1e2029]">Team</Link>
             <Link href="/contact" className="block py-2 text-gray-700 hover:text-[#1e2029]">Contact</Link>

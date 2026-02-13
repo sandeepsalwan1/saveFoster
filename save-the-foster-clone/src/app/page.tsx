@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -28,17 +29,17 @@ export default function Home() {
               {/* Photo Collage */}
               <div className="grid grid-cols-2 gap-4">
                 <img
-                  src="https://ext.same-assets.com/314997060/3628837202.jpeg"
+                  src="/images/1.jpeg"
                   alt="Children at play"
                   className="rounded-lg shadow-lg w-full h-40 md:h-48 object-cover"
                 />
                 <img
-                  src="https://ext.same-assets.com/314997060/2173599510.webp"
+                  src="/images/2.jpeg"
                   alt="Child portrait"
                   className="rounded-lg shadow-lg w-full h-40 md:h-48 object-cover"
                 />
                 <img
-                  src="https://ext.same-assets.com/314997060/3921842995.jpeg"
+                  src="/images/3.jpeg"
                   alt="Happy children"
                   className="rounded-lg shadow-lg w-full h-32 md:h-40 object-cover col-span-2"
                 />
@@ -75,7 +76,7 @@ export default function Home() {
           <div
             className="relative h-80 md:h-96 bg-cover bg-center"
             style={{
-              backgroundImage: 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("https://ext.same-assets.com/314997060/35816260.jpeg")',
+              backgroundImage: 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("/images/4.jpeg")',
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               backgroundRepeat: 'no-repeat'
@@ -94,7 +95,7 @@ export default function Home() {
           <div
             className="relative h-80 md:h-96 bg-cover bg-center"
             style={{
-              backgroundImage: 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("https://ext.same-assets.com/314997060/844139485.jpeg")',
+              backgroundImage: 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("/images/5.jpeg")',
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               backgroundRepeat: 'no-repeat'
@@ -113,7 +114,7 @@ export default function Home() {
           <div
             className="relative h-80 md:h-96 bg-cover bg-center"
             style={{
-              backgroundImage: 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("https://ext.same-assets.com/314997060/107937508.jpeg")',
+              backgroundImage: 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("/images/6.jpeg")',
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               backgroundRepeat: 'no-repeat'
@@ -128,6 +129,29 @@ export default function Home() {
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Recent Project Teaser */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#2f3257] mb-3">
+            Our Recent Project
+          </h2>
+          <p className="text-gray-500 mb-10 max-w-xl mx-auto">
+            Bangladesh Cleft Surgery Mission with Rotaplast International
+          </p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
+            <img src="/images/bangladesh/mother-and-child.jpg" alt="Mother holding child before surgery" className="rounded-xl shadow-md w-full h-48 md:h-56 object-cover" />
+            <img src="/images/bangladesh/child-after-surgery.jpg" alt="Child after successful cleft surgery" className="rounded-xl shadow-md w-full h-48 md:h-56 object-cover" />
+            <img src="/images/bangladesh/rotaplast-volunteer.jpg" alt="Rotaplast volunteer with family" className="rounded-xl shadow-md w-full h-48 md:h-56 object-cover" />
+            <img src="/images/bangladesh/suture-donation-team.jpg" alt="Volunteers with suture donations" className="rounded-xl shadow-md w-full h-48 md:h-56 object-cover" />
+          </div>
+          <Link href="/upcoming-projects">
+            <Button className="mt-8 bg-[#2f3257] hover:bg-[#3d4170] text-white text-lg px-8 py-3">
+              View All Projects
+            </Button>
+          </Link>
         </div>
       </section>
 
@@ -150,7 +174,7 @@ export default function Home() {
       <section
         className="py-24 bg-cover bg-center relative"
         style={{
-          backgroundImage: 'linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("https://ext.same-assets.com/314997060/1990727535.jpeg")'
+          backgroundImage: 'linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("/images/7.jpeg")'
         }}
       >
         <div className="container mx-auto px-4 text-center text-white">

@@ -36,7 +36,7 @@ export default function Footer() {
                 Team
               </Link>
               <Link href="/upcoming-projects" className="block text-gray-300 hover:text-white transition-colors">
-                Upcoming Projects
+                Projects
               </Link>
             </nav>
           </div>
