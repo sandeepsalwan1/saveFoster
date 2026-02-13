@@ -11,7 +11,7 @@ export default function Home() {
       <Header />
 
       {/* Hero Section */}
-      <section className="bg-gray-50 py-16 lg:py-24">
+      <section className="bg-gray-50 py-10 lg:py-16">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="order-2 md:order-1">
@@ -50,7 +50,7 @@ export default function Home() {
       </section>
 
       {/* Organization Info Section */}
-      <section className="bg-[#aeb2d9] py-16">
+      <section className="bg-[#aeb2d9] py-10">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-2xl font-bold text-white mb-6">
             Save The Foster 501(c)(3) organization
@@ -133,12 +133,12 @@ export default function Home() {
       </section>
 
       {/* Recent Project Teaser */}
-      <section className="py-16 bg-white">
+      <section className="py-10 bg-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#2f3257] mb-3">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#2f3257] mb-2">
             Our Recent Project
           </h2>
-          <p className="text-gray-500 mb-10 max-w-xl mx-auto">
+          <p className="text-gray-500 mb-6 max-w-xl mx-auto">
             Bangladesh Cleft Surgery Mission with Rotaplast International
           </p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
@@ -156,7 +156,7 @@ export default function Home() {
       </section>
 
       {/* Donation CTA Section */}
-      <section className="bg-black py-16">
+      <section className="bg-black py-10">
         <div className="container mx-auto px-4 text-center">
           <Button
             className="bg-[#1e2029] hover:bg-[#2a2d3a] text-white border border-white mb-8 text-lg px-8 py-3"
@@ -172,7 +172,7 @@ export default function Home() {
 
       {/* Quote Section */}
       <section
-        className="py-24 bg-cover bg-center relative"
+        className="py-16 bg-cover bg-center relative"
         style={{
           backgroundImage: 'linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("/images/7.jpeg")'
         }}

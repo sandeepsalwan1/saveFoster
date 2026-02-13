@@ -47,10 +47,10 @@ export default function Projects() {
       <Header />
 
       {/* Hero */}
-      <section className="bg-gray-50 py-16">
+      <section className="bg-gray-50 py-10">
         <div className="container mx-auto px-4 text-center">
-          <p className="text-lg text-gray-600 mb-4">Working Towards a Better Tomorrow</p>
-          <h1 className="text-5xl font-bold text-[#2f3257] mb-4">Our Projects</h1>
+          <p className="text-base text-gray-600 mb-2">Working Towards a Better Tomorrow</p>
+          <h1 className="text-4xl md:text-5xl font-bold text-[#2f3257] mb-3">Our Projects</h1>
           <p className="text-gray-500 max-w-2xl mx-auto">
             From collecting surgical supplies to performing life-changing cleft surgeries abroad,
             here is a look at the impact our community has made.
@@ -62,15 +62,15 @@ export default function Projects() {
       {projects.map((project, idx) => (
         <section
           key={project.id}
-          className={`py-16 ${idx % 2 === 0 ? "bg-white" : "bg-gray-50"}`}
+          className={`py-10 ${idx % 2 === 0 ? "bg-white" : "bg-gray-50"}`}
         >
           <div className="container mx-auto px-4 max-w-6xl">
             {/* Project header */}
-            <div className="text-center mb-10">
-              <span className="inline-block bg-[#aeb2d9] text-white text-sm font-semibold px-4 py-1 rounded-full mb-3">
+            <div className="text-center mb-6">
+              <span className="inline-block bg-[#aeb2d9] text-white text-sm font-semibold px-4 py-1 rounded-full mb-2">
                 {project.partner} &middot; {project.date}
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-[#2f3257] mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#2f3257] mb-3">
                 {project.title}
               </h2>
               <p className="text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -78,21 +78,14 @@ export default function Projects() {
               </p>
             </div>
 
-            {/* Photo grid – responsive masonry-style */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {/* Photo grid – 2x2 */}
+            <div className="grid grid-cols-2 gap-3">
               {project.images.map((img, i) => (
-                <div
-                  key={i}
-                  className={`overflow-hidden rounded-xl shadow-md ${
-                    i === 0 ? "sm:row-span-2" : ""
-                  }`}
-                >
+                <div key={i} className="overflow-hidden rounded-xl shadow-md">
                   <img
                     src={img.src}
                     alt={img.alt}
-                    className={`w-full object-cover transition-transform duration-300 hover:scale-105 ${
-                      i === 0 ? "h-64 sm:h-full" : "h-64"
-                    }`}
+                    className="w-full h-48 sm:h-64 md:h-80 object-cover transition-transform duration-300 hover:scale-105"
                   />
                 </div>
               ))}
@@ -102,7 +95,7 @@ export default function Projects() {
       ))}
 
       {/* ── More Projects Coming Soon placeholder ── */}
-      <section className="py-20 bg-[#aeb2d9]">
+      <section className="py-12 bg-[#aeb2d9]">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             More Projects Coming Soon
@@ -120,15 +113,15 @@ export default function Projects() {
       </section>
 
       {/* ── Suture Collection Project (existing upcoming event) ── */}
-      <section className="py-16 bg-white">
+      <section className="py-10 bg-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold text-[#2f3257] mb-8">Upcoming Event</h2>
-          <h3 className="text-2xl font-bold text-[#2f3257] mb-6 underline">
+          <h2 className="text-3xl font-bold text-[#2f3257] mb-4">Upcoming Event</h2>
+          <h3 className="text-xl font-bold text-[#2f3257] mb-4 underline">
             Suture Collection Project for Cleft Surgeries
           </h3>
           <p className="text-lg text-gray-600 mb-4">You are donating for their smiles.</p>
 
-          <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto mt-8">
+          <div className="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto mt-6">
             <div className="bg-[#2f3257] text-white p-8 rounded-lg text-left">
               <h4 className="text-xl font-bold mb-4">
                 We are fundraising to support essential surgical supplies.
@@ -157,14 +150,14 @@ export default function Projects() {
       </section>
 
       {/* ── Past Event: School Supplies ── */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-10 bg-gray-50">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold text-[#2f3257] mb-8">Past Event</h2>
-          <h3 className="text-2xl font-bold text-[#2f3257] mb-6 underline">
+          <h2 className="text-3xl font-bold text-[#2f3257] mb-4">Past Event</h2>
+          <h3 className="text-xl font-bold text-[#2f3257] mb-4 underline">
             Donating School Supplies
           </h3>
-          <p className="text-lg text-gray-600 mb-4">You are donating for your future.</p>
-          <p className="text-base text-gray-600 mb-8 leading-relaxed max-w-4xl mx-auto">
+          <p className="text-base text-gray-600 mb-3">You are donating for your future.</p>
+          <p className="text-sm text-gray-600 mb-6 leading-relaxed max-w-3xl mx-auto">
             School is one of the most important experiences a child goes through. Our next-generation
             children will be the world&apos;s future leaders, so it is our responsibility to offer proper education.
           </p>
@@ -192,7 +185,7 @@ export default function Projects() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16">
+      <section className="py-0">
         <div className="grid md:grid-cols-3">
           <div
             className="relative h-80 bg-cover bg-center"
