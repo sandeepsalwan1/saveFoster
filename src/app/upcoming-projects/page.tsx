@@ -58,9 +58,9 @@ const projects: Project[] = [
     partner: "MARICI",
     date: "July 2026",
     description:
-      "Last year, through our support to MARICI, two children were rescued from child sex trafficking. While that number may seem small compared with the magnitude of the problem, every life saved is priceless. As the saying goes, every drop in the ocean matters.",
+      "Last year, through our support to MARICI, two children were rescued from child sex trafficking. While that number may seem small compared to the magnitude of the problem, every life saved is priceless. As the saying goes, every drop in the ocean matters.",
     additionalParagraphs: [
-      "One of the rescued children later traveled to the Bay Area to attend an event. She had recently learned to study and said, ‘Education gives you freedom.’",
+      "One of the rescued children recently traveled to the Bay Area to attend an event. She recently learned to study. She said, ‘Education gives you freedom.’",
     ],
     images: [
       {
@@ -202,21 +202,6 @@ const projects: Project[] = [
     ],
   },
   {
-    id: "ukraine-generators-2023",
-    title: "Power for Orphan Care Facilities in Ukraine",
-    partner: "Ukraine humanitarian relief",
-    date: "January 2023",
-    description:
-      "Save The Foster helped raise funds to provide generators for facilities caring for orphaned children in Ukraine, helping ensure they had access to essential power during a time of crisis.",
-    images: [
-      {
-        src: "/images/projects/ukraine-generators-2023.webp",
-        alt: "Supporters at a fundraiser providing generators for orphan care facilities in Ukraine",
-        position: "center 42%",
-      },
-    ],
-  },
-  {
     id: "school-supplies",
     title: "School Supplies for Children in Need",
     partner: "Education support",
@@ -229,6 +214,21 @@ const projects: Project[] = [
         alt: "Save The Foster supporters after providing supplies to foster children in San Leandro schools",
         tall: true,
         position: "center top",
+      },
+    ],
+  },
+  {
+    id: "ukraine-generators-2023",
+    title: "Power for Orphan Care Facilities in Ukraine",
+    partner: "Ukraine humanitarian relief",
+    date: "January 2023",
+    description:
+      "Save The Foster helped raise funds to provide generators for facilities caring for orphaned children in Ukraine, helping ensure they had access to essential power during a time of crisis.",
+    images: [
+      {
+        src: "/images/projects/ukraine-generators-2023.webp",
+        alt: "Supporters at a fundraiser providing generators for orphan care facilities in Ukraine",
+        position: "center 42%",
       },
     ],
   },
