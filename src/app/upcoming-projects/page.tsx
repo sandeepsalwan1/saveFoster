@@ -38,7 +38,7 @@ const projects: Project[] = [
     partner: "Rotaplast International",
     date: "2023",
     description:
-      "Save The Foster's first donation for cleft lip surgery was made to Rotaplast International on Dr. Angelo's 92nd birthday.",
+      "Save The Foster's first donation for cleft lip surgery was made to Rotaplast on Dr. Angelo's 92nd birthday.",
     images: [
       {
         src: "/images/projects/rotaplast-first-donation/presentation.webp",
@@ -60,7 +60,7 @@ const projects: Project[] = [
     description:
       "Last year, through our support to MARICI, two children were rescued from child sex trafficking. While that number may seem small compared to the magnitude of the problem, every life saved is priceless. As the saying goes, every drop in the ocean matters.",
     additionalParagraphs: [
-      "One of the rescued children recently traveled to the Bay Area to attend an event. She recently learned to study. She said, ‘Education gives you freedom.’",
+      "One of the rescued children, Chandani, recently traveled to the Bay Area to attend an event. She recently learned to study. She said, ‘Education gives you freedom.’",
     ],
     images: [
       {
@@ -76,7 +76,7 @@ const projects: Project[] = [
     partner: "CASA, Hively, and community partners",
     date: "Recent community outreach",
     description:
-      "Save The Foster sponsored a Town Hall for foster kids and families, bringing together CASA, Hively, caregivers, and community advocates to share practical resources and support.",
+      "Save The Foster sponsored a Town Hall for foster kids and families.",
     images: [
       {
         src: "/images/projects/foster-family-support-town-hall/town-hall-speakers.webp",
