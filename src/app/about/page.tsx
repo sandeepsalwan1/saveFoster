@@ -1,13 +1,63 @@
-"use client";
-
+import Image from "next/image";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { createPageMetadata, siteConfig } from "@/lib/site";
+
+export const metadata = createPageMetadata({
+  title: "About Us & Founder Sonia Salwan",
+  description:
+    "Meet Save The Foster founder and veterinarian Sonia Salwan, and learn about our mission to support foster children and humanitarian causes.",
+  path: "/about",
+});
 
 export default function About() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <Header />
+
+      {/* Founder */}
+      <section className="relative overflow-hidden bg-[#171a2a] text-white">
+        <div className="absolute -right-24 -top-24 h-80 w-80 rounded-full bg-[#aeb2d9]/20 blur-3xl" />
+        <div className="container relative mx-auto grid max-w-6xl items-center gap-12 px-4 py-16 md:grid-cols-[1.1fr_0.9fr] md:py-24">
+          <div className="order-2 md:order-1">
+            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.28em] text-[#c9ccef]">
+              Meet Our Founder
+            </p>
+            <h1 className="mb-4 text-5xl font-bold tracking-tight md:text-6xl">
+              Sonia Salwan
+            </h1>
+            <div className="mb-7 flex flex-wrap gap-3">
+              <span className="rounded-full border border-white/25 bg-white/10 px-4 py-2 text-sm font-semibold">
+                Founder
+              </span>
+              <span className="rounded-full border border-white/25 bg-white/10 px-4 py-2 text-sm font-semibold">
+                Veterinarian
+              </span>
+            </div>
+            <p className="max-w-xl text-lg leading-relaxed text-white/80">
+              Sonia founded Save The Foster to bring compassionate, practical support to children
+              and communities in need. As a veterinarian, she brings a care-centered perspective
+              to the organization&apos;s humanitarian work locally and globally.
+            </p>
+          </div>
+
+          <div className="order-1 mx-auto w-full max-w-md md:order-2">
+            <div className="relative rounded-[2rem] border border-white/15 bg-white/10 p-3 shadow-2xl shadow-black/30">
+              <Image
+                src="/images/founder/sonia-salwan.webp"
+                alt="Sonia Salwan, founder of Save The Foster and veterinarian"
+                width={1290}
+                height={1186}
+                priority
+                sizes="(max-width: 768px) 90vw, 420px"
+                className="aspect-square w-full rounded-[1.4rem] object-cover object-center"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Hero Section with Split Images */}
       <section className="py-0">
@@ -20,7 +70,7 @@ export default function About() {
             }}
           >
             <div className="absolute inset-0 flex flex-col justify-center items-center text-white p-8 text-center">
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">Support Our Youth</h1>
+              <h2 className="text-4xl md:text-5xl font-bold mb-4">Support Our Youth</h2>
             </div>
           </div>
 
@@ -32,7 +82,7 @@ export default function About() {
             }}
           >
             <div className="absolute inset-0 flex flex-col justify-center items-center text-white p-8 text-center">
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">Help Them Succeed</h1>
+              <h2 className="text-4xl md:text-5xl font-bold mb-4">Help Them Succeed</h2>
             </div>
           </div>
         </div>
@@ -59,11 +109,8 @@ export default function About() {
               Learn more about our mission, our vision, and how we go about making the changes we want to see.
             </p>
 
-            <Button
-              className="bg-white text-[#293778] hover:bg-gray-100 text-lg px-8 py-3"
-              onClick={() => window.location.href = '/upcoming-projects'}
-            >
-              Learn More
+            <Button asChild className="bg-white text-[#293778] hover:bg-gray-100 text-lg px-8 py-3">
+              <Link href="/projects">Explore Our Projects</Link>
             </Button>
           </div>
         </div>
@@ -89,9 +136,12 @@ export default function About() {
               </div>
             </div>
             <div>
-              <img
+              <Image
                 src="/images/15.jpeg"
                 alt="Children playing in water"
+                width={3811}
+                height={1936}
+                sizes="(max-width: 768px) 92vw, 576px"
                 className="w-full rounded-lg shadow-lg"
               />
             </div>
@@ -145,11 +195,10 @@ export default function About() {
       {/* CTA Section */}
       <section className="bg-black py-16">
         <div className="container mx-auto px-4 text-center">
-          <Button
-            className="bg-[#1e2029] hover:bg-[#2a2d3a] text-white border border-white mb-8 text-lg px-8 py-3"
-            onClick={() => window.open('http://paypal.me/SaveTheFoster', '_blank')}
-          >
-            Donate
+          <Button asChild className="bg-[#1e2029] hover:bg-[#2a2d3a] text-white border border-white mb-8 text-lg px-8 py-3">
+            <a href={siteConfig.donationUrl} target="_blank" rel="noopener noreferrer">
+              Donate
+            </a>
           </Button>
           <h2 className="text-5xl font-bold text-white">
             Support their Future!

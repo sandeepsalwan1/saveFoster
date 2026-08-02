@@ -1,7 +1,6 @@
-"use client";
-
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { siteConfig } from "@/lib/site";
 
 export default function Footer() {
   return (
@@ -14,11 +13,10 @@ export default function Footer() {
             <p className="text-gray-300 mb-6 max-w-md">
               Dedicated to supporting foster children and families. Together, we can make a difference in young lives.
             </p>
-            <Button
-              className="bg-white text-[#1e2029] hover:bg-gray-100 transition-colors"
-              onClick={() => window.open('http://paypal.me/SaveTheFoster', '_blank')}
-            >
-              Donate Now
+            <Button asChild className="bg-white text-[#1e2029] hover:bg-gray-100 transition-colors">
+              <a href={siteConfig.donationUrl} target="_blank" rel="noopener noreferrer">
+                Donate Now
+              </a>
             </Button>
           </div>
 
@@ -35,7 +33,7 @@ export default function Footer() {
               <Link href="/team" className="block text-gray-300 hover:text-white transition-colors">
                 Team
               </Link>
-              <Link href="/upcoming-projects" className="block text-gray-300 hover:text-white transition-colors">
+              <Link href="/projects" className="block text-gray-300 hover:text-white transition-colors">
                 Projects
               </Link>
             </nav>
@@ -49,12 +47,18 @@ export default function Footer() {
                 Contact Us
               </Link>
               <a 
-                href="http://paypal.me/SaveTheFoster" 
+                href={siteConfig.donationUrl}
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="block text-gray-300 hover:text-white transition-colors"
               >
                 Donate
+              </a>
+              <a
+                href={`mailto:${siteConfig.email}`}
+                className="block text-gray-300 hover:text-white transition-colors"
+              >
+                Email Us
               </a>
             </nav>
           </div>

@@ -1,8 +1,16 @@
-"use client";
-
+import Image from "next/image";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { createPageMetadata, siteConfig } from "@/lib/site";
+
+export const metadata = createPageMetadata({
+  title: "Our Volunteer Team",
+  description:
+    "Meet the Save The Foster volunteers supporting foster youth, community programs, and humanitarian projects in the Bay Area and beyond.",
+  path: "/team",
+});
 
 export default function Team() {
   const teamMembers = [
@@ -10,48 +18,48 @@ export default function Team() {
       name: "Dr Harpreet Chachal",
       title: "Project Manager",
       image: "/images/16.jpeg",
-      description: "She is very passionate about helping foster youth. During her time served as a practical doctor, she has picked up many practical skills and knowledge."
+      description: "She is passionate about helping foster youth and brings practical medical knowledge and community-service experience to our projects."
     },
     {
       name: "Bobbi Ausubel",
       title: "Content Strategist",
       image: "/images/17.jpeg",
-      description: "Bobby has worked internationally with kids and has helped restore emotional and mental health of many exploited youth."
+      description: "Bobbi has worked internationally with children and has supported the emotional and mental health of exploited youth."
     },
     {
       name: "Ranjana Saxena",
       title: "Coordinator",
       image: "/images/18.jpeg",
-      description: "Dr. Saxena is a well accomplished physician, and in her free time she serves foster kids."
+      description: "Dr. Saxena is an accomplished physician who volunteers her time to serve foster youth."
     },
     {
       name: "Sandeep Salwan",
       title: "Tech Lead",
       image: "/images/19.jpeg",
-      description: "Sandeep is a University student studying Computer Science and wants to use his knowledge for the betterment of society."
+      description: "Sandeep studies computer science and applies his technical knowledge to support the organization and its community work."
     },
     {
       name: "Aryan Mohindra",
-      title: "Public Image And Marketing Management",
+      title: "Public Image and Marketing",
       image: "/images/20.jpeg",
-      description: "Aryan is a Highschool senior who is apart of the California Scholarship Federation, Social Justice Leadership, and National Honors Society."
+      description: "Aryan supports public outreach and marketing while participating in academic and social justice leadership programs."
     },
     {
       name: "Dr Chau Phan",
       title: "Product Manager",
       image: "/images/21.jpeg",
-      description: "Dr Phan is a multitalented individual who runs many businesses, but she finds time to serve her community."
+      description: "Dr. Phan brings broad business experience and dedicates time to serving her community."
     },
     {
       name: "Janice Lacsina",
       title: "Volunteer",
       image: "/images/22.jpeg",
-      description: "Janice has great experience in contributing to organizations and is a great help towards her local neighborhoods."
+      description: "Janice brings nonprofit volunteer experience and a strong commitment to helping local communities."
     }
   ];
 
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <Header />
 
       {/* Hero Section */}
@@ -67,7 +75,7 @@ export default function Team() {
       </section>
 
       {/* Quote Section */}
-      <section className="bg-[#3c9be4] py-16">
+      <section className="bg-[#245f8e] py-16">
         <div className="container mx-auto px-4 text-center">
           <blockquote className="text-3xl md:text-4xl font-light text-white max-w-4xl mx-auto">
             "Alone we can do so little<br />
@@ -77,51 +85,40 @@ export default function Team() {
       </section>
 
       {/* Team Members Section */}
-      <section className="bg-[#3c9be4] pb-16">
+      <section className="bg-[#245f8e] pb-16">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {teamMembers.map((member, index) => (
-              <div key={index} className="flex bg-white rounded-lg shadow-lg overflow-hidden">
-                <img
+            {teamMembers.map((member) => (
+              <article key={member.name} className="flex flex-col bg-white rounded-lg shadow-lg overflow-hidden sm:flex-row">
+                <Image
                   src={member.image}
-                  alt={member.name}
-                  className="w-32 h-32 object-cover"
+                  alt={`${member.name}, ${member.title} at Save The Foster`}
+                  width={620}
+                  height={684}
+                  sizes="(max-width: 640px) 92vw, 128px"
+                  className="h-64 w-full object-cover sm:h-32 sm:w-32"
                 />
-                <div className="p-6 flex-1 bg-[#8fa8db]">
+                <div className="p-6 flex-1 bg-white">
                   <p className="text-sm text-[#2f3257] font-medium mb-1">{member.title}</p>
                   <h3 className="text-xl font-bold text-[#2f3257] mb-3">{member.name}</h3>
-                  <p className="text-sm text-white leading-relaxed mb-4">
+                  <p className="text-sm text-gray-600 leading-relaxed">
                     {member.description}
                   </p>
-                  <div className="flex space-x-3">
-                    <a href="#" className="hover:opacity-75">
-                      <svg className="w-5 h-5 text-[#2f3257]" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                    </a>
-                    <a href="#" className="hover:opacity-75">
-                      <svg className="w-5 h-5 text-[#2f3257]" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-                    </a>
-                    <a href="#" className="hover:opacity-75">
-                      <svg className="w-5 h-5 text-[#2f3257]" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                    </a>
-                  </div>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
       {/* Join Team Section */}
-      <section className="bg-[#3c9be4] py-16">
+      <section className="bg-[#245f8e] py-16">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-[#2f3257] mb-8">
+          <h2 className="text-3xl font-bold text-white mb-8">
             Want to join the team?
           </h2>
-          <Button
-            className="bg-white text-[#3c9be4] hover:bg-gray-100 text-lg px-8 py-3"
-            onClick={() => window.location.href = '/contact'}
-          >
-            APPLY HERE
+          <Button asChild className="bg-white text-[#245f8e] hover:bg-gray-100 text-lg px-8 py-3">
+            <Link href="/contact">Join the Team</Link>
           </Button>
         </div>
       </section>
@@ -134,11 +131,10 @@ export default function Team() {
         }}
       >
         <div className="container mx-auto px-4 text-center">
-          <Button
-            className="bg-[#1e2029] hover:bg-[#2a2d3a] text-white border border-white mb-8 text-lg px-8 py-3"
-            onClick={() => window.open('http://paypal.me/SaveTheFoster', '_blank')}
-          >
-            Donate
+          <Button asChild className="bg-[#1e2029] hover:bg-[#2a2d3a] text-white border border-white mb-8 text-lg px-8 py-3">
+            <a href={siteConfig.donationUrl} target="_blank" rel="noopener noreferrer">
+              Donate
+            </a>
           </Button>
           <h2 className="text-5xl font-bold text-white">
             Support their Future!
