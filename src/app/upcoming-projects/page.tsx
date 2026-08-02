@@ -8,7 +8,7 @@ import { createPageMetadata, siteConfig } from "@/lib/site";
 export const metadata: Metadata = createPageMetadata({
   title: "Past Projects & Humanitarian Impact",
   description:
-    "Explore Save The Foster projects supporting foster youth, MARICI education and child protection, cleft surgery missions, humanitarian relief, and community partners.",
+    "Explore Save The Foster projects supporting foster youth, MARICI education and child protection, cleft surgery missions, suture donations, humanitarian relief, and community partners.",
   path: "/projects",
 });
 
@@ -26,18 +26,42 @@ type Project = {
   partner: string;
   date: string;
   description: string;
+  additionalParagraphs?: string[];
   images: ProjectImage[];
 };
 
-// One chronological source of truth. New and recent work stays at the top.
+// The first Rotaplast donation is the featured lead; remaining work follows recent-to-earlier.
 const projects: Project[] = [
   {
+    id: "rotaplast-first-donation-2023",
+    title: "First Rotaplast Suture Donation",
+    partner: "Rotaplast International",
+    date: "2023",
+    description:
+      "Save The Foster's first donation for cleft lip surgery was made to Rotaplast International on Dr. Angelo's 92nd birthday.",
+    images: [
+      {
+        src: "/images/projects/rotaplast-first-donation/presentation.webp",
+        alt: "Save The Foster presenting its first surgical suture donation to Rotaplast International on Dr. Angelo's 92nd birthday",
+        wide: true,
+      },
+      {
+        src: "/images/projects/rotaplast-first-donation/dr-angelo.webp",
+        alt: "Dr. Angelo with donated surgical sutures on his 92nd birthday",
+        position: "center 42%",
+      },
+    ],
+  },
+  {
     id: "marici-education-2026",
-    title: "Education & Child Protection Support",
+    title: "Supporting MARICI: Education Gives You Freedom",
     partner: "MARICI",
     date: "July 2026",
     description:
-      "Save The Foster supported MARICI's child-protection and education work, helping children move toward safer futures and greater access to learning. Supporters gathered at a Bay Area community event around the belief that education creates freedom.",
+      "Last year, through our support to MARICI, two children were rescued from child sex trafficking. While that number may seem small compared with the magnitude of the problem, every life saved is priceless. As the saying goes, every drop in the ocean matters.",
+    additionalParagraphs: [
+      "One of the rescued children later traveled to the Bay Area to attend an event. She had recently learned to study and said, ‘Education gives you freedom.’",
+    ],
     images: [
       {
         src: "/images/projects/marici-education/community-event.webp",
@@ -48,11 +72,11 @@ const projects: Project[] = [
   },
   {
     id: "foster-family-support-town-hall",
-    title: "Foster Family Support & Resource Outreach",
+    title: "Foster Family Support Town Hall",
     partner: "CASA, Hively, and community partners",
     date: "Recent community outreach",
     description:
-      "Save The Foster sponsored a Town Hall for foster children and families, bringing together CASA, Hively, caregivers, and community advocates to share practical resources and support.",
+      "Save The Foster sponsored a Town Hall for foster kids and families, bringing together CASA, Hively, caregivers, and community advocates to share practical resources and support.",
     images: [
       {
         src: "/images/projects/foster-family-support-town-hall/town-hall-speakers.webp",
@@ -77,7 +101,7 @@ const projects: Project[] = [
     partner: "Faridabad, India",
     date: "Recent humanitarian mission",
     description:
-      "Save The Foster supported families and medical teams working to provide cleft lip and palate surgeries for children in Faridabad.",
+      "Save The Foster participated in a cleft lip surgery mission in Faridabad, India, supporting life-changing cleft lip and palate surgeries for children in need.",
     images: [
       {
         src: "/images/projects/faridabad-cleft-surgery/mission-team.webp",
@@ -143,37 +167,37 @@ const projects: Project[] = [
     partner: "Rotaplast International",
     date: "September 2024",
     description:
-      "Save The Foster donated surgical sutures to support medical teams providing cleft lip and palate surgeries for children in need.",
+      "In September 2024, Save The Foster donated surgical sutures to Rotaplast International to support life-changing cleft lip and palate surgeries for children in need.",
     images: [
       {
         src: "/images/projects/rotaplast-suture-donation/suture-donation-team.webp",
         alt: "Save The Foster volunteers presenting surgical sutures to Rotaplast International",
         position: "center 38%",
       },
-      {
-        src: "/images/projects/rotaplast-suture-donation/medical-team.webp",
-        alt: "Medical team members with surgical sutures donated by Save The Foster in September 2024",
-        position: "center 36%",
-      },
     ],
   },
   {
-    id: "rotaplast-first-donation-2023",
-    title: "First Rotaplast Suture Donation",
-    partner: "Rotaplast International",
+    id: "community-suture-donation-2023",
+    title: "Suture Donation 2023",
+    partner: "Local veterinary professionals",
     date: "2023",
     description:
-      "Save The Foster made its first donation supporting cleft lip and palate surgery through Rotaplast International in 2023. The surgical sutures were presented in honor of Dr. Angelo's 92nd birthday.",
+      "In 2023, Save The Foster collected and donated surgical sutures with support from local veterinary professionals, helping equip cleft lip and palate surgery missions for children in need.",
     images: [
       {
-        src: "/images/projects/rotaplast-first-donation/presentation.webp",
-        alt: "Save The Foster presenting its first surgical suture donation to Rotaplast International in 2023",
-        wide: true,
+        src: "/images/projects/community-suture-donation-2023/clinic-handoff.webp",
+        alt: "Save The Foster presenting collected surgical sutures with local veterinary professionals",
+        position: "center 45%",
       },
       {
-        src: "/images/projects/rotaplast-first-donation/dr-angelo.webp",
-        alt: "Dr. Angelo with donated surgical sutures on his 92nd birthday",
+        src: "/images/projects/community-suture-donation-2023/team.webp",
+        alt: "Veterinary professionals with surgical sutures collected for donation in 2023",
         position: "center 42%",
+      },
+      {
+        src: "/images/projects/community-suture-donation-2023/selfie.webp",
+        alt: "Save The Foster representatives supporting the 2023 community suture donation",
+        position: "center 48%",
       },
     ],
   },
@@ -214,14 +238,17 @@ const projectSchema = {
   "@context": "https://schema.org",
   "@type": "ItemList",
   name: "Save The Foster Past Projects",
-  itemListOrder: "https://schema.org/ItemListOrderDescending",
+  itemListOrder: "https://schema.org/ItemListUnordered",
   itemListElement: projects.map((project, index) => ({
     "@type": "ListItem",
     position: index + 1,
     item: {
       "@type": "CreativeWork",
       name: project.title,
-      description: project.description,
+      description: [
+        project.description,
+        ...(project.additionalParagraphs ?? []),
+      ].join(" "),
       image: `${siteConfig.url}${project.images[0].src}`,
       url: `${siteConfig.url}/projects#${project.id}`,
     },
@@ -332,9 +359,12 @@ export default function Projects() {
                 <h2 className="text-2xl font-bold leading-tight text-[#2f3257] md:text-4xl">
                   {project.title}
                 </h2>
-                <p className="mx-auto mt-3 max-w-3xl text-[15px] leading-6 text-gray-600 md:text-base md:leading-7">
-                  {project.description}
-                </p>
+                <div className="mx-auto mt-3 max-w-3xl space-y-3 text-[15px] leading-6 text-gray-600 md:text-base md:leading-7">
+                  <p>{project.description}</p>
+                  {project.additionalParagraphs?.map((paragraph) => (
+                    <p key={paragraph}>{paragraph}</p>
+                  ))}
+                </div>
               </header>
               <ProjectGallery project={project} priority={index === 0} />
             </div>
