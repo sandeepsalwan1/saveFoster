@@ -73,6 +73,10 @@
     line-height: 1.2;
   }
 
+  .font-display {
+    font-family: 'Iowan Old Style', 'Baskerville', 'Times New Roman', serif;
+  }
+
   .container {
     max-width: 1200px;
   }
