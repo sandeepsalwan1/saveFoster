@@ -27,12 +27,20 @@ export const organizationJsonLd = {
   ],
   sameAs: [siteConfig.social.instagram, siteConfig.social.facebook],
   nonprofitStatus: "https://schema.org/Nonprofit501c3",
-  founder: {
-    "@type": "Person",
-    name: "Sonia Salwan",
-    jobTitle: ["Founder", "Veterinarian"],
-    image: `${siteConfig.url}/images/founder/sonia-salwan.webp`,
-  },
+  founder: [
+    {
+      "@type": "Person",
+      name: "Sonia Salwan",
+      jobTitle: ["Founder", "Veterinarian"],
+      image: `${siteConfig.url}/images/founder/sonia-salwan.webp`,
+    },
+    {
+      "@type": "Person",
+      name: "Shanima Salwan",
+      jobTitle: "Co-Founder",
+      image: `${siteConfig.url}/images/founder/shanima-salwan.webp`,
+    },
+  ],
   potentialAction: {
     "@type": "DonateAction",
     target: siteConfig.donationUrl,

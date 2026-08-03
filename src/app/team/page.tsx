@@ -6,56 +6,70 @@ import Footer from "@/components/Footer";
 import { createPageMetadata, siteConfig } from "@/lib/site";
 
 export const metadata = createPageMetadata({
-  title: "Our Volunteer Team",
+  title: "Our Leadership & Volunteer Team",
   description:
-    "Meet the Save The Foster volunteers supporting foster youth, community programs, and humanitarian projects in the Bay Area and beyond.",
+    "Meet Save The Foster co-founder Shanima Salwan and the volunteers supporting foster youth, community programs, and humanitarian projects.",
   path: "/team",
 });
 
 export default function Team() {
   const teamMembers = [
     {
+      name: "Shanima Salwan",
+      title: "Co-Founder",
+      image: "/images/founder/shanima-salwan.webp",
+      description:
+        "Shanima helps guide Save The Foster's programs, partnerships, and community outreach with a deep commitment to children and families in need.",
+    },
+    {
       name: "Dr Harpreet Chachal",
       title: "Project Manager",
       image: "/images/16.jpeg",
-      description: "She is passionate about helping foster youth and brings practical medical knowledge and community-service experience to our projects."
+      description:
+        "She is passionate about helping foster youth and brings practical medical knowledge and community-service experience to our projects.",
     },
     {
       name: "Bobbi Ausubel",
       title: "Content Strategist",
       image: "/images/17.jpeg",
-      description: "Bobbi has worked internationally with children and has supported the emotional and mental health of exploited youth."
+      description:
+        "Bobbi has worked internationally with children and has supported the emotional and mental health of exploited youth.",
     },
     {
       name: "Ranjana Saxena",
       title: "Coordinator",
       image: "/images/18.jpeg",
-      description: "Dr. Saxena is an accomplished physician who volunteers her time to serve foster youth."
+      description:
+        "Dr. Saxena is an accomplished physician who volunteers her time to serve foster youth.",
     },
     {
       name: "Sandeep Salwan",
       title: "Tech Lead",
       image: "/images/19.jpeg",
-      description: "Sandeep studies computer science and applies his technical knowledge to support the organization and its community work."
+      description:
+        "Sandeep studies computer science and applies his technical knowledge to support the organization and its community work.",
     },
     {
       name: "Aryan Mohindra",
       title: "Public Image and Marketing",
       image: "/images/20.jpeg",
-      description: "Aryan supports public outreach and marketing while participating in academic and social justice leadership programs."
+      description:
+        "Aryan supports public outreach and marketing while participating in academic and social justice leadership programs.",
     },
     {
       name: "Dr Chau Phan",
       title: "Product Manager",
       image: "/images/21.jpeg",
-      description: "Dr. Phan brings broad business experience and dedicates time to serving her community."
+      description:
+        "Dr. Phan brings broad business experience and dedicates time to serving her community.",
     },
     {
       name: "Janice Lacsina",
       title: "Volunteer",
       image: "/images/22.jpeg",
-      description: "Janice brings nonprofit volunteer experience and a strong commitment to helping local communities."
-    }
+      description:
+        "Janice brings nonprofit volunteer experience and a strong commitment to helping local communities.",
+    },
   ];
 
   return (
@@ -78,7 +92,8 @@ export default function Team() {
       <section className="bg-[#245f8e] py-16">
         <div className="container mx-auto px-4 text-center">
           <blockquote className="text-3xl md:text-4xl font-light text-white max-w-4xl mx-auto">
-            "Alone we can do so little<br />
+            "Alone we can do so little
+            <br />
             together we can do so much."
           </blockquote>
         </div>
@@ -89,7 +104,10 @@ export default function Team() {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {teamMembers.map((member) => (
-              <article key={member.name} className="flex flex-col bg-white rounded-lg shadow-lg overflow-hidden sm:flex-row">
+              <article
+                key={member.name}
+                className="flex flex-col bg-white rounded-lg shadow-lg overflow-hidden sm:flex-row"
+              >
                 <Image
                   src={member.image}
                   alt={`${member.name}, ${member.title} at Save The Foster`}
@@ -99,8 +117,12 @@ export default function Team() {
                   className="h-64 w-full object-cover sm:h-32 sm:w-32"
                 />
                 <div className="p-6 flex-1 bg-white">
-                  <p className="text-sm text-[#2f3257] font-medium mb-1">{member.title}</p>
-                  <h3 className="text-xl font-bold text-[#2f3257] mb-3">{member.name}</h3>
+                  <p className="text-sm text-[#2f3257] font-medium mb-1">
+                    {member.title}
+                  </p>
+                  <h3 className="text-xl font-bold text-[#2f3257] mb-3">
+                    {member.name}
+                  </h3>
                   <p className="text-sm text-gray-600 leading-relaxed">
                     {member.description}
                   </p>
@@ -117,7 +139,10 @@ export default function Team() {
           <h2 className="text-3xl font-bold text-white mb-8">
             Want to join the team?
           </h2>
-          <Button asChild className="bg-white text-[#245f8e] hover:bg-gray-100 text-lg px-8 py-3">
+          <Button
+            asChild
+            className="bg-white text-[#245f8e] hover:bg-gray-100 text-lg px-8 py-3"
+          >
             <Link href="/contact">Join the Team</Link>
           </Button>
         </div>
@@ -127,12 +152,20 @@ export default function Team() {
       <section
         className="py-16 bg-cover bg-center relative"
         style={{
-          backgroundImage: 'linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("/images/23.jpeg")'
+          backgroundImage:
+            'linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("/images/23.jpeg")',
         }}
       >
         <div className="container mx-auto px-4 text-center">
-          <Button asChild className="bg-[#1e2029] hover:bg-[#2a2d3a] text-white border border-white mb-8 text-lg px-8 py-3">
-            <a href={siteConfig.donationUrl} target="_blank" rel="noopener noreferrer">
+          <Button
+            asChild
+            className="bg-[#1e2029] hover:bg-[#2a2d3a] text-white border border-white mb-8 text-lg px-8 py-3"
+          >
+            <a
+              href={siteConfig.donationUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Donate
             </a>
           </Button>
