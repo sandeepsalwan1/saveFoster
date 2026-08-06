@@ -8,18 +8,18 @@ import { createPageMetadata, siteConfig } from "@/lib/site";
 export const metadata = createPageMetadata({
   title: "Our Leadership & Volunteer Team",
   description:
-    "Meet Save The Foster co-founder Shanima Salwan and the volunteers supporting foster youth, community programs, and humanitarian projects.",
+    "Meet Save The Foster founder and veterinarian Sonia Salwan and the volunteers supporting foster youth, community programs, and humanitarian projects.",
   path: "/team",
 });
 
 export default function Team() {
   const teamMembers = [
     {
-      name: "Shanima Salwan",
-      title: "Co-Founder",
-      image: "/images/founder/shanima-salwan.webp",
+      name: "Sonia Salwan",
+      title: "Founder",
+      image: "/images/founder/sonia-salwan.webp",
       description:
-        "Shanima helps guide Save The Foster's programs, partnerships, and community outreach with a deep commitment to children and families in need.",
+        "Sonia guides Save The Foster's programs, partnerships, and community outreach with a deep commitment to children and families in need.",
     },
     {
       name: "Dr Harpreet Chachal",
@@ -64,7 +64,7 @@ export default function Team() {
         "Dr. Phan brings broad business experience and dedicates time to serving her community.",
     },
     {
-      name: "Janice Lacsina",
+      name: "Janice",
       title: "Volunteer",
       image: "/images/22.jpeg",
       description:
@@ -153,7 +153,7 @@ export default function Team() {
         className="py-16 bg-cover bg-center relative"
         style={{
           backgroundImage:
-            'linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("/images/23.jpeg")',
+            'linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("/images/23.webp")',
         }}
       >
         <div className="container mx-auto px-4 text-center">
@@ -165,8 +165,9 @@ export default function Team() {
               href={siteConfig.donationUrl}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Donate with PayPal (opens in a new tab)"
             >
-              Donate
+              Donate with PayPal
             </a>
           </Button>
           <h2 className="text-5xl font-bold text-white">

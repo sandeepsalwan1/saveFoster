@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import JsonLd from "@/components/JsonLd";
 import { createPageMetadata, siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = createPageMetadata({
@@ -318,12 +319,7 @@ function ProjectGallery({
 export default function Projects() {
   return (
     <main id="main-content" className="min-h-screen bg-white text-gray-900">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(projectSchema).replace(/</g, "\\u003c"),
-        }}
-      />
+      <JsonLd data={projectSchema} />
       <Header />
 
       <section className="border-b border-gray-200 bg-gray-50 py-7 md:py-10">

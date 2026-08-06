@@ -6,7 +6,7 @@ export const siteConfig = {
   email: "savethefoster@gmail.com",
   description:
     "Save The Foster is a Bay Area nonprofit supporting foster youth, vulnerable children, and humanitarian projects locally and globally.",
-  donationUrl: "https://paypal.me/SaveTheFoster",
+  donationUrl: "https://www.paypal.com/paypalme/SaveTheFoster",
   social: {
     instagram: "https://www.instagram.com/savethefoster",
     facebook: "https://www.facebook.com/Save-The-Foster-112121588205964",
@@ -16,8 +16,16 @@ export const siteConfig = {
 export const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "NGO",
+  "@id": `${siteConfig.url}/#organization`,
   name: siteConfig.name,
   url: siteConfig.url,
+  logo: {
+    "@type": "ImageObject",
+    url: `${siteConfig.url}/images/save-the-foster-logo.png`,
+    width: 512,
+    height: 512,
+  },
+  image: `${siteConfig.url}/opengraph-image`,
   email: siteConfig.email,
   description: siteConfig.description,
   foundingDate: "2022",
@@ -27,26 +35,59 @@ export const organizationJsonLd = {
   ],
   sameAs: [siteConfig.social.instagram, siteConfig.social.facebook],
   nonprofitStatus: "https://schema.org/Nonprofit501c3",
-  founder: [
-    {
-      "@type": "Person",
-      name: "Sonia Salwan",
-      jobTitle: ["Founder", "Veterinarian"],
-      image: `${siteConfig.url}/images/founder/sonia-salwan.webp`,
-    },
-    {
-      "@type": "Person",
-      name: "Shanima Salwan",
-      jobTitle: "Co-Founder",
-      image: `${siteConfig.url}/images/founder/shanima-salwan.webp`,
-    },
-  ],
+  founder: {
+    "@type": "Person",
+    "@id": `${siteConfig.url}/about#sonia-salwan`,
+    name: "Sonia Salwan",
+    url: `${siteConfig.url}/about`,
+    jobTitle: ["Founder", "Veterinarian"],
+    image: `${siteConfig.url}/images/founder/sonia-salwan.webp`,
+  },
+  contactPoint: {
+    "@type": "ContactPoint",
+    email: siteConfig.email,
+    contactType: "volunteer and donation inquiries",
+    availableLanguage: "English",
+  },
   potentialAction: {
     "@type": "DonateAction",
     target: siteConfig.donationUrl,
     recipient: {
       "@type": "NGO",
       name: siteConfig.name,
+    },
+  },
+};
+
+export const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${siteConfig.url}/#website`,
+  name: siteConfig.name,
+  alternateName: "savethefoster.com",
+  url: siteConfig.url,
+  publisher: {
+    "@id": `${siteConfig.url}/#organization`,
+  },
+};
+
+export const founderProfileJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "@id": `${siteConfig.url}/about#profile-page`,
+  url: `${siteConfig.url}/about`,
+  name: "Sonia Salwan, Founder of Save The Foster",
+  mainEntity: {
+    "@type": "Person",
+    "@id": `${siteConfig.url}/about#sonia-salwan`,
+    name: "Sonia Salwan",
+    url: `${siteConfig.url}/about`,
+    image: `${siteConfig.url}/images/founder/sonia-salwan.webp`,
+    jobTitle: ["Founder", "Veterinarian"],
+    description:
+      "Founder of Save The Foster and a veterinarian supporting children and humanitarian projects locally and globally.",
+    worksFor: {
+      "@id": `${siteConfig.url}/#organization`,
     },
   },
 };

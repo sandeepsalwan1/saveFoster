@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import JsonLd from "@/components/JsonLd";
 import { organizationJsonLd, siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -77,12 +78,7 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organizationJsonLd).replace(/</g, "\\u003c"),
-          }}
-        />
+        <JsonLd data={organizationJsonLd} />
         {children}
       </body>
     </html>

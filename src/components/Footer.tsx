@@ -11,11 +11,20 @@ export default function Footer() {
           <div className="md:col-span-2">
             <h3 className="text-2xl font-bold mb-4">Save The Foster</h3>
             <p className="text-gray-300 mb-6 max-w-md">
-              Dedicated to supporting foster children and families. Together, we can make a difference in young lives.
+              Dedicated to supporting foster children and families. Together, we
+              can make a difference in young lives.
             </p>
-            <Button asChild className="bg-white text-[#1e2029] hover:bg-gray-100 transition-colors">
-              <a href={siteConfig.donationUrl} target="_blank" rel="noopener noreferrer">
-                Donate Now
+            <Button
+              asChild
+              className="bg-white text-[#1e2029] hover:bg-gray-100 transition-colors"
+            >
+              <a
+                href={siteConfig.donationUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Donate with PayPal (opens in a new tab)"
+              >
+                Donate with PayPal
               </a>
             </Button>
           </div>
@@ -24,16 +33,28 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <nav className="space-y-2">
-              <Link href="/" className="block text-gray-300 hover:text-white transition-colors">
+              <Link
+                href="/"
+                className="block text-gray-300 hover:text-white transition-colors"
+              >
                 Home
               </Link>
-              <Link href="/about" className="block text-gray-300 hover:text-white transition-colors">
+              <Link
+                href="/about"
+                className="block text-gray-300 hover:text-white transition-colors"
+              >
                 About Us
               </Link>
-              <Link href="/team" className="block text-gray-300 hover:text-white transition-colors">
+              <Link
+                href="/team"
+                className="block text-gray-300 hover:text-white transition-colors"
+              >
                 Team
               </Link>
-              <Link href="/projects" className="block text-gray-300 hover:text-white transition-colors">
+              <Link
+                href="/projects"
+                className="block text-gray-300 hover:text-white transition-colors"
+              >
                 Projects
               </Link>
             </nav>
@@ -43,16 +64,20 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-semibold mb-4">Get Involved</h4>
             <nav className="space-y-2">
-              <Link href="/contact" className="block text-gray-300 hover:text-white transition-colors">
-                Contact Us
-              </Link>
-              <a 
-                href={siteConfig.donationUrl}
-                target="_blank" 
-                rel="noopener noreferrer"
+              <Link
+                href="/contact"
                 className="block text-gray-300 hover:text-white transition-colors"
               >
-                Donate
+                Contact Us
+              </Link>
+              <a
+                href={siteConfig.donationUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Donate with PayPal (opens in a new tab)"
+                className="block text-gray-300 hover:text-white transition-colors"
+              >
+                Donate with PayPal
               </a>
               <a
                 href={`mailto:${siteConfig.email}`}
